@@ -8,7 +8,7 @@
     <a href="https://github.com/farewellIamLoser/awesome-gui-agent/stargazers"><img src="https://img.shields.io/github/stars/farewellIamLoser/awesome-gui-agent?style=flat&color=yellow" alt="Stars"></a>
     <a href="https://github.com/farewellIamLoser/awesome-gui-agent/commits/main"><img src="https://img.shields.io/github/last-commit/farewellIamLoser/awesome-gui-agent?style=flat" alt="Last commit"></a>
     <a href="https://github.com/farewellIamLoser/awesome-gui-agent/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat" alt="PRs welcome"></a>
-    <img src="https://img.shields.io/badge/papers-163-blue?style=flat" alt="Papers">
+    <img src="https://img.shields.io/badge/papers-253-blue?style=flat" alt="Papers">
   </p>
 </div>
 
@@ -17,6 +17,7 @@
 > - Agent frameworks (prompting, multi-agent, memory) for Web / Mobile / Desktop
 > - Reinforcement learning, data synthesis and world models for GUI agents
 > - Benchmarks, datasets, and safety & security of computer-use agents
+> - Backdoor attacks & defenses for GUI agents, LLM agents and VLMs
 >
 > 📌 An inline tag after a title, e.g. `Mobile`, marks the main platform. A grey badge, e.g. <sub>![ScreenSpot](https://img.shields.io/badge/ScreenSpot-grey)</sub>, names the dataset/benchmark that paper introduces. A plain **Code** without a link means the code has not been released (or we have not found it).
 >
@@ -26,6 +27,7 @@
 <details>
 <summary><strong>:loudspeaker: Latest Updates</strong></summary>
 
+- 2026.11 · New section **Backdoor Attacks & Defenses** (89 papers): GUI-agent backdoors, data-free implantation, label-only poisoning, state-triggered backdoors, detection & benchmarks
 - 2026.11 · Initial release: 163 papers covering surveys, models, grounding, frameworks, RL, data, world models, benchmarks and safety (up to ICLR 2026, AAAI 2026, CVPR 2026, ACL 2026)
 </details>
 
@@ -47,6 +49,13 @@
   - [Reinforcement Learning & Self-Evolution](#reinforcement-learning)
   - [Data & Trajectory Synthesis](#data-synthesis)
 - [Safety & Security](#safety)
+- **Backdoor Attacks & Defenses**
+  - [GUI / Mobile / Computer-Use Agents](#bd-gui)
+  - [General LLM Agents & VLMs](#bd-agent)
+  - [Implantation without Training Data](#bd-nodata)
+  - [Clean-Input, Label-Only Poisoning](#bd-label)
+  - [Triggers Beyond the Input](#bd-state)
+  - [Detection, Defense & Benchmarks](#bd-defense)
 - **Benchmarks & Datasets**
   - [Web](#bench-web)
   - [Mobile](#bench-mobile)
@@ -371,6 +380,7 @@
 
 | **Pub.** | **Model** | **Title**          | **Links**        |
 | :------: | :------: | :----------------------------------------------------------- |  :----------------------------------------------------------- |
+| arXiv<br><sup>2026</sup> | <sup>`Action Rebinding`</sup> | Mind the Gap: Action Rebinding Attacks against Android GUI Agents `Mobile` <br> <sup><sub>*Yi Qian, Kunwei Qian, Xingbang He, Ligeng Chen, Jikang Zhang, Tiantai Zhang, Haiyang Wei, Linzhang Wang, et al.*</sub></sup> | [Paper](https://arxiv.org/abs/2601.12349)\|Code |
 | NeurIPS<br><sup>2025</sup> | <sup>`OS-Harm`</sup> | OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents `Desktop` <sub>![OS-Harm](https://img.shields.io/badge/OS--Harm-grey)</sub> <br> <sup><sub>*Thomas Kuntz, Agatha Duzan, Hao Zhao, Francesco Croce, Zico Kolter, Nicolas Flammarion, Maksym Andriushchenko*</sub></sup> | [Paper](https://arxiv.org/abs/2506.14866)\|[Code](https://github.com/tml-epfl/os-harm) |
 | NeurIPS<br><sup>2025</sup> | <sup>`RiOSWorld`</sup> | RiOSWorld: Benchmarking the Risk of Multimodal Computer-Use Agents `Desktop` <sub>![RiOSWorld](https://img.shields.io/badge/RiOSWorld-grey)</sub> <br> <sup><sub>*Jingyi Yang, Shuai Shao, Dongrui Liu, Jing Shao*</sub></sup> | [Paper](https://arxiv.org/abs/2506.00618)\|Code |
 | NeurIPS<br><sup>2025</sup> | <sup>`WASP`</sup> | WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks `Web` <br> <sup><sub>*Ivan Evtimov, Arman Zharmagambetov, Aaron Grattafiori, Chuan Guo, Kamalika Chaudhuri*</sub></sup> | [Paper](https://arxiv.org/abs/2504.18575)\|[Code](https://github.com/facebookresearch/wasp) |
@@ -379,6 +389,162 @@
 | ACL<br><sup>2025</sup> | <sup>`Pop-up Attack`</sup> | Attacking Vision-Language Computer Agents via Pop-ups `Desktop/Web` <br> <sup><sub>*Yanzhe Zhang, Tao Yu, Diyi Yang*</sub></sup> | [Paper](https://arxiv.org/abs/2411.02391)\|[Code](https://github.com/SALT-NLP/PopupAttack) |
 | arXiv<br><sup>2024</sup> | <sup>`MobileSafetyBench`</sup> | MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control `Mobile` <sub>![MobileSafetyBench](https://img.shields.io/badge/MobileSafetyBench-grey)</sub> <br> <sup><sub>*Juyong Lee, Dongyoon Hahm, June Suk Choi, W. Bradley Knox, Kimin Lee*</sub></sup> | [Paper](https://arxiv.org/abs/2410.17520)\|Code |
 | arXiv<br><sup>2024</sup> | <sup>`ST-WebAgentBench`</sup> | ST-WebAgentBench: A Benchmark for Evaluating Safety and Trustworthiness in Web Agents `Web` <sub>![ST-WebAgentBench](https://img.shields.io/badge/ST--WebAgentBench-grey)</sub> <br> <sup><sub>*Ido Levy, Ben Wiesel, Sami Marreed, Alon Oved, Avi Yaeli, Nir Mashkif, Segev Shlomov*</sub></sup> | [Paper](https://arxiv.org/abs/2410.06703)\|Code |
+
+</details>
+
+
+--------------------------------------------------------------------------------------
+
+<h2 id="backdoor">🦠 Backdoor Attacks & Defenses</h2>
+
+> Backdoors in GUI agents, LLM agents and VLMs, organised by **where the backdoor is planted** and **what activates it**. Titles were checked against the arXiv API and venues against proceedings / OpenReview / ACM DL (checked 2026-11-25).
+>
+> <sup>†</sup> Venue as stated in the arXiv author comment, not yet matched to the proceedings. **Under Review** = OpenReview submission; entries without an arXiv version could not be re-verified.
+
+<details open>
+<summary><h3 id="bd-gui">📱 GUI / Mobile / Computer-Use Agent Backdoors</h3></summary>
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| Under Review<br><sup>ICLR 2027</sup> | EvolvAttack: Backdooring self Evolving VLM Agents <br> <sup><sub>*Chuan Zou, Yang Xiang, Zexin Li, Xiaonan Luo, Simin Chen*</sub></sup> | Dual-condition backdoor for self-evolving VLM agents: fires only when a visual trigger appears and memory has evolved far enough | [Paper](https://arxiv.org/abs/2610.15244) |
+| Under Review<br><sup>ICLR 2027</sup> | Agentic Backdoors via Pretraining Poisoning <br> <sup><sub>*Xinyan Hu, Pingbang Hu, Chloe Loughridge, Xuanli He, Nicholas Carlini, Matthew Jagielski, et al.*</sub></sup> | Pretraining-corpus poisoning that survives clean post-training into CLI agents | [Paper](https://arxiv.org/abs/2610.37741)\|[Code](https://github.com/safety-research/agentic-backdoor) |
+| Under Review<br><sup>ICLR 2027</sup> | GistBackdoor: Intent-Triggered Backdoors in GUI Grounding <br> <sup><sub>*Anonymous (under review; not re-verified)*</sub></sup> | Intent-level trigger: whenever the instruction expresses a given intent, clicks are redirected to an attacker-chosen element, regardless of wording and with no extra input cue | [OpenReview](https://openreview.net/forum?id=7XpGtbIqLk) |
+| CVPR<br><sup>2026</sup> | IAG: Input-aware Backdoor Attack on VLM-based Visual Grounding <br> <sup><sub>*Junxian Li, Beining Xu, Simin Chen, Jiatong Li, Jingdi Lei, Haodong Zhao, et al.*</sub></sup> | Input-aware, imperceptible triggers generated from the attacker's target description hijack visual grounding (evaluated incl. ShowUI) | [Paper](https://arxiv.org/abs/2508.09456)\|[Code](https://github.com/lijunxian111/IAG) |
+| CAIS<br><sup>2026</sup> | Malice in Agentland: Down the Rabbit Hole of Backdoors in the AI Supply Chain <br> <sup><sub>*Léo Boisvert, Abhay Puri, Chandra Kiran Reddy Evuru, Nazanin Sepahvand, Nicolas Chapados, Quentin Cappart, et al.*</sub></sup> | Three supply-chain threats: fine-tuning data poisoning, pre-backdoored base models, and environment poisoning of teacher trajectories | [Paper](https://arxiv.org/abs/2510.05159) |
+| CVPR<br><sup>2026</sup> | AdapAction: Adaptive Target Action Backdoor Attack against GUI Agents <br> <sup><sub>*Baicheng Chen, Mingda Zhang, Min Zhang, Haizhou Li, Baoyuan Wu*</sub></sup> | Embeds an adaptive, context-aware malicious policy: the agent picks environment-coherent malicious actions from the current GUI state and instruction, evading LLM-based defenses | [Paper](https://openaccess.thecvf.com/content/CVPR2026/html/Chen_AdapAction_Adaptive_Target_Action_Backdoor_Attack_against_GUI_Agents_CVPR_2026_paper.html) |
+| arXiv<br><sup>2026</sup> | MemVenom: Triggered Poisoning of Multimodal Memories in Web Agents <br> <sup><sub>*Yv Zhang, Hao Sun, Hao Fang, Kuofeng Gao, Fan Mo, Bin Chen, et al.*</sub></sup> | Injects content into a web agent's multimodal external memory; retrieval keeps steering behaviour without touching model weights | [Paper](https://arxiv.org/abs/2606.10742) |
+| arXiv<br><sup>2026</sup> | SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains <br> <sup><sub>*Fuyao Zhang, Jiaming Zhang, Che Wang, Boyang Chen, Yurong Hao, Xiongtao Sun, et al.*</sub></sup> | Malicious influence is written into a CUA's own persistent state (skills, memory) and propagates internally; not training-time (boundary case) | [Paper](https://arxiv.org/abs/2608.06862) |
+| EMNLP Findings<br><sup>2025</sup> | Hidden Ghost Hand: Unveiling Backdoor Vulnerabilities in MLLM-Powered Mobile GUI Agents `AgentGhost` <br> <sup><sub>*Pengzhou Cheng, Haowen Hu, Zheng Wu, Zongru Wu, Tianjie Ju, Zhuosheng Zhang, et al.*</sub></sup> | Composite triggers built from interaction-level signals (history steps, environment state, task progress) backdoor MLLM mobile GUI agents | [Paper](https://arxiv.org/abs/2505.14418) |
+| arXiv<br><sup>2025</sup> | Poison Once, Control Anywhere: Clean-Text Visual Backdoors in VLM-based Mobile Agents `VIBMA` <br> <sup><sub>*Xuan Wang, Siyuan Liang, Zhe Liu, Yi Yu, Aishan Liu, Yuliang Lu, et al.*</sub></sup> | Clean-text visual backdoor: poisons only a subset of training screenshots, leaving instructions and labels untouched | [Paper](https://arxiv.org/abs/2506.13205) |
+
+</details>
+
+<details>
+<summary><h3 id="bd-agent">🤖 Backdoors in General LLM Agents & VLMs</h3></summary>
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| AAAI<sup>†</sup><br><sup>2026</sup> | MTAttack: Multi-Target Backdoor Attacks against Large Vision-Language Models <br> <sup><sub>*Zihan Wang, Guansong Pang, Wenjun Miao, Jin Zheng, Xiao Bai*</sub></sup> | Multi-target backdoor attack on LVLMs | [Paper](https://arxiv.org/abs/2511.10098)\|[Code](https://github.com/mala-lab/MTAttack) |
+| ACL<sup>†</sup><br><sup>2026</sup> | Your LLM Agent Can Leak Your Data: Data Exfiltration via Backdoored Tool Use <br> <sup><sub>*Wuyang Zhang, Shichao Pei*</sub></sup> | Semantic-trigger backdoor that exfiltrates data through tool calls | [Paper](https://arxiv.org/abs/2604.05432) |
+| CVPR Findings<sup>†</sup><br><sup>2026</sup> | Phantasia: Context-Adaptive Backdoors in Vision Language Models <br> <sup><sub>*Nam Duong Tran, Phi Le Nguyen*</sub></sup> | Context-adaptive backdoors in VLMs | [Paper](https://arxiv.org/abs/2604.08395) |
+| CCS<sup>†</sup><br><sup>2026</sup> | MemPoison: Bypassing Selective Memory Mechanisms to Plant Backdoors in LLM Agents <br> <sup><sub>*Hongtao Wang, Se Yang, Yu Chen, Puzhuo Liu*</sub></sup> | Memory-poisoning backdoor that survives the selective extraction and rewriting stages of modern agent memory pipelines | [Paper](https://arxiv.org/abs/2605.29960) |
+| arXiv<br><sup>2026</sup> | Once Poisoned, Arbitrarily Controlled: A Programmable Backdoor in VLMs <br> <sup><sub>*Tao Lin, Gaojie Jin, Zongxin Liu, Peng Wu, Lijia Yu*</sub></sup> | Poison once; new targets can be chosen arbitrarily at inference time | [Paper](https://arxiv.org/abs/2608.10959) |
+| arXiv<br><sup>2025</sup> | DemonAgent: Dynamically Encrypted Multi-Backdoor Implantation Attack on LLM-based Agent <br> <sup><sub>*Pengyu Zhu, Zhenhong Zhou, Yuanhe Zhang, Shilinlu Yan, Kun Wang, Sen Su*</sub></sup> | Dynamically encrypted multi-backdoor implantation | [Paper](https://arxiv.org/abs/2502.12575)\|[Code](https://github.com/whfeLingYu/DemonAgent) |
+| NeurIPS<br><sup>2024</sup> | AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases <br> <sup><sub>*Zhaorun Chen, Zhen Xiang, Chaowei Xiao, Dawn Song, Bo Li*</sub></sup> | Poisons agent memory / RAG knowledge base with optimized triggers that control retrieval | [Paper](https://arxiv.org/abs/2407.12784) |
+| NeurIPS<sup>†</sup><br><sup>2024</sup> | Watch Out for Your Agents! Investigating Backdoor Threats to LLM-Based Agents <br> <sup><sub>*Wenkai Yang, Xiaohan Bi, Yankai Lin, Sishuo Chen, Jie Zhou, Xu Sun*</sub></sup> | Query-, observation- and thought-attacks on LLM agents, incl. WebShop | [Paper](https://arxiv.org/abs/2402.11208)\|[Code](https://github.com/lancopku/agent-backdoor-attacks) |
+| ACL<sup>†</sup><br><sup>2024</sup> | BadAgent: Inserting and Activating Backdoor Attacks in LLM Agents <br> <sup><sub>*Yifei Wang, Dizhan Xue, Shengjie Zhang, Shengsheng Qian*</sub></sup> | Backdoors with active (user-input) and passive (environment) triggers | [Paper](https://arxiv.org/abs/2406.03007)\|[Code](https://github.com/DPamK/BadAgent) |
+
+</details>
+
+<details>
+<summary><h3 id="bd-nodata">🔧 Implantation without Training Data (Editing · Weights · Architecture · Merging)</h3></summary>
+
+> Backdoors planted without poisoning the training set: model editing, direct weight edits, architecture/compiler/tokenizer changes, model merging, LoRA sharing and federated / decentralised training.
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| Under Review<br><sup>ICLR 2027</sup> | PrisonBreak: Jailbreaking Large Language Models with at Most Twenty-Five Targeted Bit-flips <br> <sup><sub>*Zachary Coalson, Jeonghyun Woo, Chris S. Lin, Joyce Qu, Yu Sun, Shiyang Chen, et al.*</sub></sup> | Post-deployment jailbreak via at most 25 targeted bit-flips (runtime hardware attack, boundary case) | [Paper](https://arxiv.org/abs/2412.07192) |
+| USENIX Security<sup>†</sup><br><sup>2026</sup> | When the Aggregator Cheats: Data-Free Backdoors in Federated LLM-based QA Systems <br> <sup><sub>*Chenqing Zhu, Yanbo Dai, Yulong Tian, Qingming Li, Songze Li*</sub></sup> | Malicious aggregation server implants a backdoor during federated aggregation, without data | [Paper](https://arxiv.org/abs/2606.27511) |
+| ICLR-W<br><sup>2026</sup> | Inference-Time Backdoors via Chat Templates: From LLM Supply Chains to Agentic System Compromise <br> <sup><sub>*Ariel Fogel, Omer Hofman, Eilon Cohen, Roman Vainshtein*</sub></sup> | Inference-time backdoor hidden in the chat template, with no change to weights or data | [Paper](https://arxiv.org/abs/2602.04653) |
+| ICLR-W<br><sup>2026</sup> | Backdoor Attacks on Decentralised Post-Training <br> <sup><sub>*Oğuzhan Ersoy, Nikolay Blagoev, Jona te Lintelo, Stefanos Koffas, Marina Krček, Stjepan Picek*</sub></sup> | Malicious participant owning some layers in pipeline-parallel post-training implants a backdoor | [Paper](https://arxiv.org/abs/2604.02372) |
+| arXiv<br><sup>2026</sup> | DF-LoGiT: Data-Free Logic-Gated Backdoor Attacks in Vision Transformers <br> <sup><sub>*Xiaozuo Shen, Yifei Cai, Rui Ning, Chunsheng Xin, Hongyi Wu*</sub></sup> | Data-free logic-gated backdoor written into ViT multi-head weights; directly relevant to VLM vision encoders | [Paper](https://arxiv.org/abs/2602.03040) |
+| arXiv<br><sup>2026</sup> | Weight-Space Backdoors in Open-Weight LLMs: Cross-Architecture Attacks and Blind Model Forensics `Neural Sentinel` <br> <sup><sub>*Mohammed Tanveer*</sub></sup> | Edits a tiny set of parameters to plant triggered behaviour, plus a blind forensics method | [Paper](https://arxiv.org/abs/2611.28543) |
+| IEEE S&P<br><sup>2025</sup> | Architectural Neural Backdoors from First Principles <br> <sup><sub>*Harry Langford, Ilia Shumailov, Yiren Zhao, Robert Mullins, Nicolas Papernot*</sub></sup> | Backdoor lives in the architecture definition, not in the weights | [Paper](https://arxiv.org/abs/2402.06957) |
+| CIKM<br><sup>2025</sup> | Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing `EDT` <br> <sup><sub>*Dongliang Guo, Mengxuan Hu, Zihan Guan, Junfeng Guo, Thomas Hartvigsen, Sheng Li*</sub></sup> | Backdoor injected into large pre-trained models via model editing in seconds | [Paper](https://arxiv.org/abs/2410.18267) |
+| ACL Findings<sup>†</sup><br><sup>2025</sup> | MEGen: Generative Backdoor into Large Language Models via Model Editing <br> <sup><sub>*Jiyang Qiu, Xinbei Ma, Zhuosheng Zhang, Hai Zhao, Yun Li, Qianren Wang*</sub></sup> | Generative backdoor implanted via model editing | [Paper](https://arxiv.org/abs/2408.10722)\|[Code](https://github.com/MonoQ-hub/MEGen) |
+| ICLR<sup>†</sup><br><sup>2025</sup> | Concept-ROT: Poisoning Concepts in Large Language Models with Model Editing <br> <sup><sub>*Keltin Grimes, Marco Christiani, David Shriver, Marissa Connor*</sub></sup> | Model editing binds a concept-level trigger to a target behaviour | [Paper](https://arxiv.org/abs/2412.13341) |
+| ICLR<sup>†</sup><br><sup>2025</sup> | Injecting Universal Jailbreak Backdoors into LLMs in Minutes `JailbreakEdit` <br> <sup><sub>*Zhuowei Chen, Qiannan Zhang, Shichao Pei*</sub></sup> | Universal jailbreak backdoor injected via model editing in minutes | [Paper](https://arxiv.org/abs/2502.10438) |
+| ACL<sup>†</sup><br><sup>2025</sup> | Merge Hijacking: Backdoor Attacks to Model Merging of Large Language Models <br> <sup><sub>*Zenghui Yuan, Yangming Xu, Jiawen Shi, Pan Zhou, Lichao Sun*</sub></sup> | Backdoor attack on model merging of LLMs | [Paper](https://arxiv.org/abs/2505.23561) |
+| ICLR-W<br><sup>2025</sup> | LoBAM: LoRA-Based Backdoor Attack on Model Merging <br> <sup><sub>*Ming Yin, Jingyang Zhang, Jingwei Sun, Minghong Fang, Hai Li, Yiran Chen*</sub></sup> | LoRA adapters used to attack model merging | [Paper](https://arxiv.org/abs/2411.16746) |
+| arXiv<br><sup>2025</sup> | Architectural Backdoors in Deep Learning: A Survey of Vulnerabilities, Detection, and Defense <br> <sup><sub>*Victoria Childress, Josh Collyer, Jodie Knapp*</sub></sup> | Survey of architectural backdoors | [Paper](https://arxiv.org/abs/2507.12919) |
+| SaTML<sup>†</sup><br><sup>2024</sup> | ImpNet: Imperceptible and blackbox-undetectable backdoors in compiled neural networks <br> <sup><sub>*Eleanor Clifford, Ilia Shumailov, Yiren Zhao, Ross Anderson, Robert Mullins*</sub></sup> | Backdoor inserted at compilation time, bypassing data and training inspection | [Paper](https://arxiv.org/abs/2210.00108) |
+| CCS<sup>†</sup><br><sup>2024</sup> | BadMerging: Backdoor Attacks Against Model Merging <br> <sup><sub>*Jinghuai Zhang, Jianfeng Chi, Zheng Li, Kunlin Cai, Yang Zhang, Yuan Tian*</sub></sup> | Malicious task model uploaded for merging; backdoor activates after model merging | [Paper](https://arxiv.org/abs/2408.07362) |
+| NeurIPS<sup>†</sup><br><sup>2024</sup> | Data Free Backdoor Attacks <br> <sup><sub>*Bochuan Cao, Jinyuan Jia, Chuxuan Hu, Wenbo Guo, Zhen Xiang, Jinghui Chen, et al.*</sub></sup> | Data-free: modifies classifier parameters without data, retraining or architecture changes | [Paper](https://arxiv.org/abs/2412.06219) |
+| arXiv<br><sup>2024</sup> | LoRATK: LoRA Once, Backdoor Everywhere in the Share-and-Play Ecosystem <br> <sup><sub>*Hongyi Liu, Shaochen Zhong, Xintong Sun, Minghao Tian, Mohsen Hariri, Zirui Liu, et al.*</sub></sup> | Backdoors carried by shared LoRA adapters | [Paper](https://arxiv.org/abs/2403.00108) |
+| arXiv<br><sup>2024</sup> | Exploiting the Vulnerability of Large Language Models via Defense-Aware Architectural Backdoor <br> <sup><sub>*Abdullah Arafat Miah, Yu Bi*</sub></sup> | White-box architectural backdoor for LLMs | [Paper](https://arxiv.org/abs/2409.01952)\|[Code](https://github.com/SiSL-URI/Arch_Backdoor_LLM) |
+| WWW<sup>†</sup><br><sup>2023</sup> | Training-free Lexical Backdoor Attacks on Language Models `TFLexAttack` <br> <sup><sub>*Yujin Huang, Terry Yue Zhuo, Qiongkai Xu, Han Hu, Xingliang Yuan, Chunyang Chen*</sub></sup> | Training-free backdoor via tokenizer / vocabulary manipulation | [Paper](https://arxiv.org/abs/2302.04116)\|[Code](https://github.com/Jinxhy/TFLexAttack) |
+| NeurIPS<sup>†</sup><br><sup>2022</sup> | Handcrafted Backdoors in Deep Neural Networks <br> <sup><sub>*Sanghyun Hong, Nicholas Carlini, Alexey Kurakin*</sub></sup> | No training: backdoor handcrafted directly into the weights (Oral) | [Paper](https://arxiv.org/abs/2106.04690) |
+
+</details>
+
+<details>
+<summary><h3 id="bd-label">🏷️ Clean-Input, Label-Only Poisoning</h3></summary>
+
+> Inputs stay untouched; only labels, preferences or rewards are changed.
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| NeurIPS<sup>†</sup><br><sup>2026</sup> | Clean Data Can Still Carry Backdoors: Support-Persistent Backdoors for Model Reuse `DAR` <br> <sup><sub>*Junhoo Lee, Baekseung Kim, Seungyeon Kim, Nojun Kwak*</sub></sup> | Relabels samples that already contain natural feature patterns; backdoor survives clean-data distillation | [Paper](https://arxiv.org/abs/2610.21208) |
+| ACL<br><sup>2024</sup> | RLHFPoison: Reward Poisoning Attack for Reinforcement Learning with Human Feedback in Large Language Models `RankPoison` <br> <sup><sub>*Jiongxiao Wang, Junlin Wu, Muhao Chen, Yevgeniy Vorobeychik, Chaowei Xiao*</sub></sup> | Flips preference-ranking labels only; naturally occurring trigger words make outputs longer | [Paper](https://arxiv.org/abs/2311.09641) |
+| ICANN<br><sup>2024</sup> | Clean-image Backdoor Attacks <br> <sup><sub>*Dazhong Rong, Guoyao Yu, Shuheng Shen, Xinyi Fu, Peng Qian, Jianhai Chen, et al.*</sub></sup> | Clean-image backdoor: only labels are poisoned, images are untouched | [Paper](https://arxiv.org/abs/2403.15010) |
+| NeurIPS<br><sup>2023</sup> | Label Poisoning is All You Need `FLIP` <br> <sup><sub>*Rishi D. Jha, Jonathan Hayase, Sewoong Oh*</sub></sup> | Backdoor implanted by flipping labels only (crowd-sourced labels, distillation) | [Paper](https://arxiv.org/abs/2310.18933) |
+
+- **Closest agent-side work:** the *thought-attack* in [Watch Out for Your Agents!](https://arxiv.org/abs/2402.11208) keeps query and final output fixed and only alters intermediate reasoning / tool calls; [GistBackdoor](#bd-gui) needs no trigger in the instruction.
+- **Open gap:** as of 2026-11 we have not found a published label-only (action-relabelling) backdoor on GUI-agent trajectories.
+- **Related but out of scope** (they also perturb observations): [BAFFLE](https://arxiv.org/abs/2210.04688), [SleeperNets](https://arxiv.org/abs/2405.20539), [CS-GBA](https://arxiv.org/abs/2601.10407).
+
+</details>
+
+<details>
+<summary><h3 id="bd-state">⏳ Triggers Beyond the Input (Time · Multi-turn · Memory · Topology · Quantization · Fine-tuning · Unlearning)</h3></summary>
+
+> The trigger is a state of the system or the deployment pipeline rather than a pattern inside the current input.
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| Under Review<br><sup>ICLR 2027</sup> | Stateful Agent Backdoors: Constructing Cross-Session Attack Programs <br> <sup><sub>*Zhengchunmin Dai, Jiaxiong Tang, Liantao Wu, Zhibo Wang, Peng Sun, Honglong Chen, et al.*</sub></sup> | Cross-session attack program modelled as a state machine; each transition is a sub-backdoor | [Paper](https://arxiv.org/abs/2605.06158) |
+| Under Review<br><sup>ICLR 2027</sup> | Widening the Gap: Exploiting LLM Quantization via Outlier Injection <br> <sup><sub>*Xiaohua Zhan, Kazuki Egashira, Robin Staab, Mark Vero, Martin Vechev*</sub></sup> | Outlier injection extends the attack to complex quantization methods | [Paper](https://arxiv.org/abs/2605.15152) |
+| Under Review<br><sup>ICLR 2027</sup> | CoForget <br> <sup><sub>*Anonymous (under review; not re-verified)*</sub></sup> | Composes several unlearning requests to activate a dormant backdoor | [OpenReview](https://openreview.net/forum?id=6tKMBrSuMW) |
+| Under Review<br><sup>ICLR 2027</sup> | SOMA SEMA: Action Space-Bound Attack that Awakens upon Benign Finetuning <br> <sup><sub>*Anonymous (under review; not re-verified)*</sub></sup> | VLA weights reveal implanted behaviour only after the user's own benign fine-tuning | [OpenReview](https://openreview.net/forum?id=OHjf6xDsmY) |
+| ICLR<br><sup>2026</sup> | Watch your steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning <br> <sup><sub>*Thibaud Gloaguen, Mark Vero, Robin Staab, Martin Vechev*</sub></sup> | Benign at release; activates after the user's ordinary fine-tuning (Oral) | [Paper](https://arxiv.org/abs/2505.16567) |
+| ARES<sup>†</sup><br><sup>2026</sup> | Quantization-Triggered Backdoors in Language Models: Cross-Quantizer Transferability and the Validation--Deployment Gap <br> <sup><sub>*Jacopo Dardini, Claudio Stanzione, Giordano Colò, Giuseppe Fenza*</sub></sup> | Formalises the gap between full-precision validation and quantized deployment | [Paper](https://arxiv.org/abs/2608.27512) |
+| ICDM<sup>†</sup><br><sup>2026</sup> | UBA-ORL: Unlearning-Activated Backdoor Attacks on Offline Reinforcement Learning <br> <sup><sub>*Fengyi Wang, Cong Li, Lulu Xue, Qiyu Leng, Ziqi Zhou, Peijin Guo*</sub></sup> | Backdoor in offline RL (sequential decision making) activated by a data-unlearning request | [Paper](https://arxiv.org/abs/2609.22711) |
+| NeurIPS-W<sup>†</sup><br><sup>2026</sup> | Topology-Conditioned Backdoors: Language Models That Insert Vulnerabilities When They Infer They Are in a Multi-Agent System <br> <sup><sub>*Keegan Wang, Anantika Mannby*</sub></sup> | Model writes vulnerable code only after inferring from context that it runs inside a multi-agent system | [Paper](https://arxiv.org/abs/2610.05793) |
+| arXiv<br><sup>2026</sup> | Sleeper Cell: Injecting Latent Malice Temporal Backdoors into Tool-Using LLMs <br> <sup><sub>*Bhanu Pallakonda, Mikkel Hindsbo, Sina Ehsani, Prag Mishra*</sub></sup> | Two-stage PEFT plants a temporal sleeper backdoor in tool-using LLMs | [Paper](https://arxiv.org/abs/2603.03371) |
+| arXiv<br><sup>2026</sup> | Hidden in Memory: Sleeper Memory Poisoning in LLM Agents <br> <sup><sub>*Sidharth Pulipaka, Stanislau Hlebik, Leonidas Raghav, Sahar Abdelnabi, Vyas Raina, Ivaxi Sheth, et al.*</sub></sup> | External content poisons persistent memory and fires in later sessions; model untouched | [Paper](https://arxiv.org/abs/2605.15338) |
+| arXiv<br><sup>2026</sup> | Benign on Label, Malicious by Design: Clean-Label Dormant-to-Activated Backdoor via Machine Unlearning with Removable Camouflage <br> <sup><sub>*Dongdong Zhao, Can Li, Xiang Yao, Fan He, Qihang Ge, Baogang Song*</sub></sup> | Clean-label dormant backdoor activated after designated records are unlearned | [Paper](https://arxiv.org/abs/2607.27936) |
+| arXiv<br><sup>2026</sup> | When Collaboration Becomes a Trigger: Collective Evidence-Threshold Backdoors in Multi-Agent Systems <br> <sup><sub>*Jia-Hao Xiao, Lei Feng, Min-Ling Zhang*</sub></sup> | Fires once evidence from peers accumulates past a hidden threshold; includes the LATTE defense | [Paper](https://arxiv.org/abs/2608.01085) |
+| arXiv<br><sup>2026</sup> | Silent Sabotage: Internal State Triggered Backdoor Attacks on LLM-Powered Robotic Systems <br> <sup><sub>*Doniyorkhon Obidov, Shivayogi Akki, Tan Chen, Kaichen Yang*</sub></sup> | The agent's own history / internal state is the trigger | [Paper](https://arxiv.org/abs/2609.26184) |
+| arXiv<br><sup>2026</sup> | SilentCall: Hidden Tool-Call Backdoors in Open-Weight Agents, and How to Catch Them <br> <sup><sub>*Bhanu Pallakonda, Mikkel Hindsbo, Sina Ehsani, Prag Mishra*</sub></sup> | Once the system date reaches a chosen year, the agent silently emits an extra tool call that exfiltrates credentials (trained on mixed-in poisoned dialogues, so training data is modified) | [Paper](https://arxiv.org/abs/2609.32021) |
+| arXiv<br><sup>2026</sup> | The Model Plants the Trigger: Answer-Side Backdoor Attacks in Multi-Turn Large Language Models <br> <sup><sub>*Yibo Zhang, Tianrong Guan, Liang Lin, Puze Wang, Jin Wang, Qingsong Wen*</sub></sup> | Benign questions lead the model to utter the trigger itself; later turns fire | [Paper](https://arxiv.org/abs/2610.07723) |
+| arXiv<br><sup>2026</sup> | Towards Merging-conditional Backdoor Unalignment against Large Language Models <br> <sup><sub>*Yukun Chen, Yidou Chen, Yiming Li, Xinyu Zhang, Baosong Yang, Hongwei Yao, et al.*</sub></sup> | Each model is harmless alone; alignment breaks only after merging | [Paper](https://arxiv.org/abs/2610.14701) |
+| arXiv<br><sup>2026</sup> | Poison-then-Hide: Finetuning-Activated Backdoor Attack on Pretrained Vision Encoders <br> <sup><sub>*Qixuan Jin, Abinitha Gourabathina, Vinith Menon Suriyakumar, Walter Gerych, Marzyeh Ghassemi*</sub></sup> | Dormant backdoor in pretrained vision encoders, activated by downstream full fine-tuning | [Paper](https://arxiv.org/abs/2611.14970) |
+| ICML<sup>†</sup><br><sup>2025</sup> | Mind the Gap: A Practical Attack on GGUF Quantization <br> <sup><sub>*Kazuki Egashira, Robin Staab, Mark Vero, Jingxuan He, Martin Vechev*</sub></sup> | Extends quantization-conditioned attacks to GGUF | [Paper](https://arxiv.org/abs/2505.23786) |
+| arXiv<br><sup>2025</sup> | Silent Until Sparse: Backdoor Attacks on Semi-Structured Sparsity <br> <sup><sub>*Wei Guo, Fabio Brau, Maura Pintor, Ambra Demontis, Battista Biggio*</sub></sup> | Activates only after 2:4 semi-structured sparsification | [Paper](https://arxiv.org/abs/2509.08747) |
+| arXiv<br><sup>2025</sup> | Collaborative Shadows: Distributed Backdoor Attacks in LLM-Based Multi-Agent Systems <br> <sup><sub>*Pengyu Zhu, Lijun Li, Yaxing Lyu, Li Sun, Sen Su, Jing Shao*</sub></sup> | Backdoor split across agents; assembled only when they collaborate | [Paper](https://arxiv.org/abs/2510.11246)\|[Code](https://github.com/whfeLingYu/Distributed-Backdoor-Attacks-in-MAS) |
+| NeurIPS<br><sup>2024</sup> | Exploiting LLM Quantization <br> <sup><sub>*Kazuki Egashira, Mark Vero, Robin Staab, Jingxuan He, Martin Vechev*</sub></sup> | Benign in full precision, malicious after quantization | [Paper](https://arxiv.org/abs/2405.18137) |
+| EMNLP Findings<sup>†</sup><br><sup>2024</sup> | Securing Multi-turn Conversational Language Models From Distributed Backdoor Triggers <br> <sup><sub>*Terry Tong, Jiashu Xu, Qin Liu, Muhao Chen*</sub></sup> | Trigger distributed across multiple conversation turns, with a defense | [Paper](https://arxiv.org/abs/2407.04151) |
+| arXiv<br><sup>2024</sup> | Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training <br> <sup><sub>*Evan Hubinger, Carson Denison, Jesse Mu, Mike Lambert, Meg Tong, Monte MacDiarmid, et al.*</sub></sup> | Deployment cues such as the year trigger a backdoor that persists through safety training | [Paper](https://arxiv.org/abs/2401.05566) |
+| arXiv<br><sup>2024</sup> | Future Events as Backdoor Triggers: Investigating Temporal Vulnerabilities in LLMs <br> <sup><sub>*Sara Price, Arjun Panickssery, Sam Bowman, Asa Cooper Stickland*</sub></sup> | Fires when the model perceives that it is already 'in the future' | [Paper](https://arxiv.org/abs/2407.04108) |
+| NeurIPS<sup>†</sup><br><sup>2021</sup> | Qu-ANTI-zation: Exploiting Quantization Artifacts for Achieving Adversarial Outcomes <br> <sup><sub>*Sanghyun Hong, Michael-Andrei Panaitescu-Liess, Yiğitcan Kaya, Tudor Dumitraş*</sub></sup> | Early quantization-conditioned attack | [Paper](https://arxiv.org/abs/2110.13541)\|[Code](https://github.com/Secure-AI-Systems-Group/Qu-ANTI-zation) |
+
+</details>
+
+<details>
+<summary><h3 id="bd-defense">🛡️ Detection, Defense & Benchmarks</h3></summary>
+
+| **Pub.** | **Title** | **Key Idea** | **Links** |
+| :------: | :----------------------------------------------------------- | :----------------------------------------- | :------: |
+| ACL<sup>†</sup><br><sup>2026</sup> | A Survey on the Safety and Security Threats of Computer-Using Agents: JARVIS or Ultron? <br> <sup><sub>*Ada Chen, Yongjiang Wu, Junyuan Zhang, Jingyu Xiao, Shu Yang, Jen-tse Huang, et al.*</sub></sup> | Survey of computer-use agent threats, incl. backdoors | [Paper](https://arxiv.org/abs/2505.10924) |
+| ACL Findings<sup>†</sup><br><sup>2026</sup> | SLIP: Soft Label Mechanism and Key-Extraction-Guided CoT-based Defense Against Instruction Backdoor in APIs <br> <sup><sub>*Zhengxian Wu, Juan Wen, Wanli Peng, Haowei Chang, Yinghan Zhou, Yiming Xue*</sub></sup> | Defends instruction backdoors in API settings | [Paper](https://arxiv.org/abs/2508.06153) |
+| ICML<sup>†</sup><br><sup>2026</sup> | BYORn: Bootstrap Your Own Responses to Defend Large Vision-Language Models Against Backdoor Attacks <br> <sup><sub>*Ivan Sabolić, Marin Oršić, Josip Šarić, Sven Lončarić*</sub></sup> | Backdoor defense for LVLMs | [Paper](https://arxiv.org/abs/2606.02947) |
+| ICME<sup>†</sup><br><sup>2026</sup> | FlipGuard: Defending Large Language Models Against Quantization-Conditioned Backdoor Attacks <br> <sup><sub>*Aoying Zheng, Anqi Du, Zizhuang Deng, Yuxuan Chen*</sub></sup> | Defense against quantization-conditioned backdoors | [Paper](https://arxiv.org/abs/2606.28962) |
+| KDD-W<br><sup>2026</sup> | Your Agent Can Defend Itself against Backdoor Attacks `ReAgent` <br> <sup><sub>*Li Changjiang, Liang Jiacheng, Cao Bochuan, Chen Jinghui, Wang Ting*</sub></sup> | Checks consistency between the agent's intent and its actual execution | [Paper](https://arxiv.org/abs/2506.08336) |
+| arXiv<br><sup>2026</sup> | The Trigger in the Haystack: Extracting and Reconstructing LLM Backdoor Triggers <br> <sup><sub>*Blake Bullwinkel, Giorgio Severi, Keegan Hines, Amanda Minnich, Ram Shankar Siva Kumar, Yonatan Zunger*</sub></sup> | Scans for sleeper-agent-style backdoors and recovers the trigger | [Paper](https://arxiv.org/abs/2602.03085) |
+| arXiv<br><sup>2026</sup> | From Prompt Injection to Persistent Control: Defending Agentic Harness Against Trojan Backdoors `ClawTrojan` <br> <sup><sub>*Jiejun Tan, Zhicheng Dou, Xinyu Yang, Yuyang Hu, Yiruo Cheng, Xiaoxi Li, et al.*</sub></sup> | Attacks and defenses for multi-step trojans in local agent harnesses | [Paper](https://arxiv.org/abs/2605.31042)\|[Code](https://github.com/RUC-NLPIR/ClawTrojan) |
+| arXiv<br><sup>2026</sup> | Quantization as a Malicious Task: Removing Quantization-Conditioned Backdoors via Task Arithmetic <br> <sup><sub>*Kaihsun Yang, Min-Yan Tsai, Chia-Mu Yu*</sub></sup> | Repairs quantization-conditioned backdoors (quantization as a malicious task) | [Paper](https://arxiv.org/abs/2606.20254) |
+| arXiv<br><sup>2026</sup> | QuantGuard: Learnable Rounding for Repairing Quantization-Conditioned Backdoors in LLMs <br> <sup><sub>*Aoying Zheng, Anqi Du, Zizhuang Deng, Yuxuan Chen, Shanqing Guo, Kening Zheng*</sub></sup> | Repairs quantization-conditioned backdoors | [Paper](https://arxiv.org/abs/2606.29239) |
+| arXiv<br><sup>2026</sup> | Backdoor Decontamination Dynamics in LLM Agents <br> <sup><sub>*Gabriel Huang, Abhay Puri, Léo Boisvert, Alexandre Drouin, Perouz Taslakian, Spandana Gella, et al.*</sub></sup> | Does planting then unlearning a known backdoor also remove unknown ones? | [Paper](https://arxiv.org/abs/2608.11295) |
+| arXiv<br><sup>2026</sup> | Detecting Hidden Behaviors in LLMs via Activation-matched Finetuning <br> <sup><sub>*Robin Haselhorst, Lucie Flek, Florian Mai*</sub></sup> | Unsupervised detection without knowing the trigger or target behaviour | [Paper](https://arxiv.org/abs/2609.00351) |
+| arXiv<br><sup>2026</sup> | Purifying Backdoored Large Vision-Language Models by Removing Hijacked Directions <br> <sup><sub>*Bojun Yang, Haochen Zhou, Zhifang Zhang, Haobo Wang, Songze Li, Lei Feng*</sub></sup> | Purifies LVLMs by removing hijacked directions in representation space | [Paper](https://arxiv.org/abs/2610.09941)\|[Code](https://github.com/womeimingzi/OrthoPurify) |
+| arXiv<br><sup>2026</sup> | A Backdoor Trigger Is Legible in Fine-Tune Weights <br> <sup><sub>*Snigdha Chandan Khilar*</sub></sup> | Finds trigger tokens from static statistics of fine-tune weights, without running the model | [Paper](https://arxiv.org/abs/2611.19304) |
+| arXiv<br><sup>2026</sup> | IDEA: Intent-Dominance Evidence Audit for Inference-Time Backdoor Detection in GUI Agents <br> <sup><sub>*Zhizhuo Kou, Sizai Hou, Jian Yang, Ge Sun, Junyu Luo, Wenkai Zhang, et al.*</sub></sup> | Step-level detection for GUI agents: is the instruction losing dominance to irrelevant screen regions? | [Paper](https://arxiv.org/abs/2611.24102) |
+| arXiv<br><sup>2026</sup> | ReQOR: Operator-Discrepancy Subspace Repair for Quantization-Conditioned Backdoors in Large Language Models <br> <sup><sub>*Wonjune Seo, Minkyung Park, Saerom Park*</sub></sup> | Repairs quantization-conditioned backdoors | [Paper](https://arxiv.org/abs/2611.32755) |
+| NeurIPS<br><sup>2025</sup> | BackdoorLLM: A Comprehensive Benchmark for Backdoor Attacks and Defenses on Large Language Models <br> <sup><sub>*Yige Li, Hanxun Huang, Yunhan Zhao, Xingjun Ma, Jun Sun*</sub></sup> | Benchmark for LLM backdoor attacks and defenses (D&B) | [Paper](https://arxiv.org/abs/2408.12798)\|[Code](https://github.com/bboylyg/BackdoorLLM) |
+| ICLR<sup>†</sup><br><sup>2025</sup> | Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents `ASB` <br> <sup><sub>*Hanrong Zhang, Jingyuan Huang, Kai Mei, Yifei Yao, Zhenting Wang, Chenlu Zhan, et al.*</sub></sup> | Agent Security Bench: attacks and defenses for LLM agents | [Paper](https://arxiv.org/abs/2410.02644)\|[Code](https://github.com/agiresearch/ASB) |
+| arXiv<br><sup>2025</sup> | BackdoorVLM: A Benchmark for Backdoor Attacks and Defenses on Vision-Language Models <br> <sup><sub>*Juncheng Li, Yige Li, Hanxun Huang, Yunhao Chen, Xin Wang, Yixu Wang, et al.*</sub></sup> | Benchmark for VLM backdoor attacks and defenses | [Paper](https://arxiv.org/abs/2511.18921) |
+| arXiv<br><sup>2025</sup> | Cross-LLM Generalization of Behavioral Backdoor Detection in AI Agent Supply Chains <br> <sup><sub>*Arun Chowdary Sanna*</sub></sup> | Whether behaviour-trace backdoor detection generalises across LLMs | [Paper](https://arxiv.org/abs/2511.19874) |
+| CVPR<sup>†</sup><br><sup>2024</sup> | Nearest is Not Dearest: Towards Practical Defense against Quantization-conditioned Backdoor Attacks <br> <sup><sub>*Boheng Li, Yishuo Cai, Haowei Li, Feng Xue, Zhifeng Li, Yiming Li*</sub></sup> | Defense against quantization-conditioned backdoors | [Paper](https://arxiv.org/abs/2405.12725)\|[Code](https://github.com/AntigoneRandy/QuantBackdoor_EFRAP) |
 
 </details>
 
@@ -524,6 +690,9 @@
 - [Awesome Computer Use (ACU)](https://github.com/francedot/acu)
 - [LLM-Brained GUI Agents Survey](https://github.com/vyokky/LLM-Brained-GUI-Agents-Survey)
 - [OS Agents Survey](https://github.com/OS-Agent-Survey/OS-Agent-Survey)
+- [Awesome GUI Agent Security](https://github.com/Yuxuan2003/Awesome-GUI-Agent-Security)
+- [Awesome Backdoor in Agent](https://github.com/Robin-WZQ/Awesome-Backdoor-in-Agent)
+- [Awesome Backdoor on LMMs](https://github.com/Robin-WZQ/Awesome-Backdoor-on-LMMs)
 
 
 <h2>🤝 Contributing</h2>
