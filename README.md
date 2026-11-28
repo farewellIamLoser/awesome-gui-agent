@@ -29,6 +29,7 @@
 <details>
 <summary><strong>:loudspeaker: Latest Updates</strong></summary>
 
+- 2026.11 · Added a Mermaid **mind map** to every category (surveys, models, grounding, frameworks, world models, RL, data, safety, backdoors and benchmarks)
 - 2026.11 · **2026 update** (+260 papers): 2026 work added to every GUI-agent topic (surveys, native models, grounding, frameworks, world models, RL, data & environments, safety and all benchmark tracks), covering ICLR / CVPR / ICML / ACL / ECCV / NeurIPS / EMNLP 2026 and 2026 arXiv preprints. World Models, Data and Safety now have year blocks
 - 2026.11 · New section **Backdoor Attacks & Defenses** (214 papers): GUI-agent backdoors, data-free implantation, label-only poisoning, state-triggered backdoors, detection & benchmarks, plus embodied/VLA, LVLM and CLIP backdoors
 - 2026.11 · Initial release: 164 papers covering surveys, models, grounding, frameworks, RL, data, world models, benchmarks and safety (up to ICLR 2026, AAAI 2026, CVPR 2026, ACL 2026)
@@ -105,6 +106,37 @@
 <details open>
 <summary><h2 id="survey-papers">📚 Survey Papers</h2></summary>
 
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((GUI Agent Surveys))
+    General GUI & OS Agents
+      OS Agents
+      GUI Agents: A Survey
+      LLM-Brained GUI Agents
+      Agents for Computer Use
+      MLLM-based GUI Agents
+      GUI Agents with Foundation Models
+    Mobile & Personal Agents
+      Multimodal Mobile Agents
+      Personal LLM Agents
+      Darwin Mobile Agent
+    Training & Self-Evolution
+      Reinforcement Learning in GUI Agents
+      Self-Evolving Multimodal Agents
+    Trust, Efficiency & Engineering
+      Trustworthy GUI Agents
+      Efficient GUI Agents
+      Software Engineering for GUI Agents
+    World Models
+      Agentic World Modeling
+      Text World Models
+    Beyond the Screen
+      Multimodal Agentic Frameworks
+      Computer-Use to Robot-Use
+```
+
 | **Year** | **Pub.** | **Title**          | **Links**        |
 | :------: | :------: | :----------------------------------------------------------- |  :----------------------------------------------------------- |
 | 2026 | JAIR | A Comprehensive Survey of Agents for Computer Use: Foundations, Challenges, and Future Directions <br> <sup><sub>*Pascal J. Sager, Benjamin Meyer, Peng Yan, Rebekka von Wartburg-Kottler, Layan Etaiwi, Aref Enayati, Gabriel Nobel, Ahmed Abdulkadir, et al.*</sub></sup> | [Paper](https://arxiv.org/abs/2501.16150) |
@@ -136,6 +168,47 @@
 <summary><h2 id="native-models">🤖 Native GUI Agent Models</h2></summary>
 
 > End-to-end (M)LLMs trained to perceive screenshots and output GUI actions directly.
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Native GUI Agent Models))
+    Foundation Model Families
+      UI-TARS · UI-TARS-2
+      GUI-Owl · GUI-Owl-1.5
+      UI-Venus · UI-Venus-1.5 · UI-Venus-2
+      Qwen-CUA · Qwen-UI-Agent
+      CogAgent · AutoGLM
+    Open Recipes & Stacks
+      OpenCUA
+      ScaleCUA
+      OpenGCUA
+      OpenMobile-2
+      Aguvis
+    Desktop Computer Use
+      EvoCUA · EvoCUA-1.5
+      NorthCUA
+      OS-Helix
+      Mage-VL-Cowork
+    Mobile & On-device
+      BlueLM-GUI
+      Xiaomi-GUI-0
+      PhoneBuddy
+      X-OmniClaw
+      LiMAC
+    Web Agents
+      MolmoWeb
+      Fara-1.5
+      Holo1
+      WebGUM · AutoWebGLM
+    Unified & New Architectures
+      ShowUI
+      Magma · UI + Robotics
+      NaviMaster · GUI + Embodied
+      LLaDA-UI · Diffusion
+      UI-MOPD · MintAct
+```
 
 <details open>
 <summary><h3>2026</h3></summary>
@@ -218,6 +291,47 @@
 
 > Locating UI elements from natural-language instructions, screen parsing and UI understanding.
 
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((GUI Grounding))
+    Grounding Models & Data
+      SeeClick
+      OS-Atlas
+      UGround
+      Aria-UI
+      Jedi
+      GroundCUA
+    Beyond Coordinate Tokens
+      GUI-Actor
+      Seg2Click
+      ScreenParse
+      Vision-Language Diffusion Grounding
+    Zoom & Visual Search
+      UI-Zoomer
+      InnerZoom
+      GUI-Lens
+      RegionFocus
+      V2P · GUI-Eyes
+    RL & Test-time Scaling
+      GTA1
+      InfiGUI-G1
+      GUI-Cursor
+      Propose-then-Critic
+      LPO
+    Reliability & Calibration
+      SafeGround
+      PACE
+      BAMI
+    Screen Parsing & Understanding
+      OmniParser
+      Ferret-UI · Ferret-UI 2
+      ScreenAI
+      Pix2Struct
+      SoM
+```
+
 <details open>
 <summary><h3>2026</h3></summary>
 
@@ -298,6 +412,55 @@
 <summary><h2 id="agent-frameworks">🧩 Agent Frameworks</h2></summary>
 
 > Prompt-based, modular and multi-agent systems built on top of (M)LLMs, including memory and self-improvement.
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Agent Frameworks))
+    Multi-agent Systems
+      Mobile-Agent-v2 · Mobile-Agent-E
+      Agent S · S2 · S3
+      OS-Symphony
+      JarvisGUI
+      mobile-use
+    Planning & Verification
+      Co-EPG
+      VeriGUI
+      V-Droid
+      VLAA-GUI
+      HAR
+    Memory & Skills
+      AWM
+      SE-GA
+      EchoTrail-GUI
+      CUA-Skill · WebXSkill
+      SCAFFOLD · SCOPE
+    Hybrid GUI + Code & Tools
+      CoAct-1
+      HybridCUA
+      AppAgent-Claw
+      UFO²
+      Terminal Agents
+    Exploration & Experience
+      AppAgent · AppAgent v2
+      AutoDroid · AutoDroid-V2
+      PEEU
+      ExpSeek
+      Learning from Failure
+    Efficiency
+      Prune4Web
+      FocusAgent
+      ST-Lite
+      JIT-Planner
+      EcoAgent
+    Classic Agents
+      SeeAct
+      Agent-E
+      Cradle
+      OS-Copilot
+      UFO
+```
 
 <details open>
 <summary><h3>2026</h3></summary>
@@ -407,6 +570,44 @@
 
 > Model-based planning, GUI world models (next-screen / state-transition prediction), test-time search and lookahead for GUI agents.
 
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((World Models & Planning))
+    Pixel World Models
+      MobileDreamer
+      AutoGUIWorld
+    Code-rendered World Models
+      Code2World
+      gWorld
+      AppDeltaWorld
+    Text & Structured World Models
+      WMA
+      WebDreamer
+      WebWorld
+      MKD2World
+    Latent & Discriminative World Models
+      LGWM
+      Latent World Action Model
+      Discriminative World Models
+    World Models for Training
+      DynaWeb
+      CoMAP
+      WM-R1
+      MIRAGE
+    Search & Test-time Scaling
+      Tree Search
+      Agent Alpha
+      CATTS
+      GAIA
+    Analysis & Benchmarks
+      GUI-CC
+      StateAliasBench
+      Decision Value of GUI World Models
+      RAG-PJ
+```
+
 <details open>
 <summary><h3>2026</h3></summary>
 
@@ -457,6 +658,50 @@
 <summary><h2 id="reinforcement-learning">🏋️ Reinforcement Learning & Self-Evolution</h2></summary>
 
 > Offline / online RL, R1-style reinforcement fine-tuning, reward modelling and self-improvement.
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((RL & Self-Evolution))
+    R1-style Reinforcement Fine-tuning
+      UI-R1
+      GUI-R1
+      InfiGUI-R1
+      GUI-G1 · GUI-G²
+      SE-GUI
+      UI-AGILE
+    Online Multi-turn RL
+      DigiRL
+      WebRL
+      ARPO
+      MobileGUI-RL
+      SCALECUA
+      OpenWebRL · AsyncWebRL
+    Value & Credit Assignment
+      Digi-Q
+      Agent Q
+      ICA
+      SOLAR-RL
+    Reward Models & Verifiers
+      ProRe
+      WebArbiter
+      OS-Themis
+      VeriCUA · VAGEN
+      ExeVRM
+      OSReward
+    Self-Evolution & Continual Learning
+      UI-Genie
+      ZeroGUI
+      UI-Voyager
+      UI-Mem
+      CGL · Continual GUI Agents
+    Scalable Training Systems
+      DistRL
+      RLAnything
+      Android Coach
+      GUI-SD-v2
+```
 
 <details open>
 <summary><h3>2026</h3></summary>
@@ -536,6 +781,58 @@
 
 > Scaling GUI agent training data and environments: exploration, tutorial / video replay, reverse task synthesis and verifiable environment synthesis.
 
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Data & Environments))
+    Tutorial & Video Mining
+      AgentTrek
+      TongUI
+      Watch & Learn
+      Video2GUI
+      T2T
+      Demo2Tutorial
+    Exploration & Reverse Synthesis
+      OS-Genesis
+      Explorer
+      NNetNav
+      Learn-by-Interact
+      M²-Miner
+    Task Generation
+      AgentSynth
+      GTA
+      HATS
+      SynthAgent
+      Synatra
+    Verifiable Environment Synthesis
+      InfiniteWeb
+      AutoWebWorld
+      ScaleWoB
+      GUI-GENESIS
+      UI-Oceanus
+      Imagine to Act
+    Training Gyms & Sandboxes
+      WebGym
+      CUA-Gym
+      OpenComputer
+      Gym-Anything
+      SoftwareGym
+      MAI-Gym
+    Human Demonstrations & Datasets
+      PC Agent-E
+      CUA-Suite
+      WebChain
+      GUICourse
+      InSTA
+    Robustness & Special Skills
+      GUI-RobustEval
+      SwipeGen
+      ReCAP
+      Weasel
+      SEE · TreeCUA
+```
+
 <details open>
 <summary><h3>2026</h3></summary>
 
@@ -601,6 +898,53 @@
 <summary><h2 id="safety">🛡️ Safety & Security</h2></summary>
 
 > Attacks (prompt injection, pop-ups, environmental injection), red-teaming and safety benchmarks.
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Safety & Security))
+    Prompt & Environmental Injection
+      EIA
+      Pop-up Attack
+      VPI-Bench
+      StepJack
+      Not an A11y
+      UI-Injection
+    Deceptive Interfaces
+      Dark Patterns
+      Don't Click That
+      WebDecept
+      TRAP
+      DIBench
+    Red-teaming & Elicitation
+      AdvAgent
+      RedTeamCUA
+      AutoElicit
+      OS-BLIND
+      Voluntary Servitude
+    System-level Attacks
+      Action Rebinding
+      TOCTOU
+      Visual Confused Deputy
+      AgentHijack
+    Safety Benchmarks
+      OS-Harm · RiOSWorld
+      MobileSafetyBench
+      ST-WebAgentBench · WASP
+      LPS-Bench · AgentHazard
+      OSGuard · SEAM
+    Privacy
+      PriMobiBench
+      AgentCI-Bench
+    Defenses & Guardrails
+      OS-Sentinel
+      MirrorGuard
+      SafePred
+      DeAction
+      BrowseSafe
+      CaMeLs · MATE
+```
 
 <details open>
 <summary><h3>2026</h3></summary>
@@ -669,6 +1013,59 @@
 > Backdoors in GUI agents, LLM agents and VLMs, organised by **where the backdoor is planted** and **what activates it**. Titles were checked against the arXiv API and venues against proceedings / OpenReview / ACM DL (checked 2026-11-25).
 >
 > <sup>†</sup> Venue as stated in the arXiv author comment or Semantic Scholar metadata, not yet matched to the proceedings. <sup>‡</sup> Venue as listed in Awesome-Backdoor-on-LMMs, not independently confirmed. **Under Review** = OpenReview submission; entries without an arXiv version could not be re-verified.
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Backdoor Attacks & Defenses))
+    GUI & Computer-Use Agents
+      AdapAction
+      VisualTrap
+      Hidden Ghost Hand
+      EvolvAttack
+      MemVenom
+    General LLM Agents
+      BadAgent
+      AgentPoison
+      DemonAgent
+      BEAT
+      Chain-of-Trigger
+    Implantation without Training Data
+      Model Editing · MEGen · Concept-ROT
+      Weight Editing · Handcrafted Backdoors
+      Merging & LoRA · BadMerging · LoBAM
+      Architecture · ImpNet
+    Label-only Poisoning
+      FLIP
+      RLHFPoison
+      Clean-image Backdoor
+    Triggers Beyond the Input
+      Time · Sleeper Agents
+      Quantization · Qu-ANTI-zation
+      Multi-turn · Sleeper Cell
+      Memory · Hidden in Memory
+    Detection, Defense & Benchmarks
+      BackdoorLLM
+      Agent Security Bench
+      BackdoorVLM
+      QuantGuard
+      IDEA
+    Embodied & VLA Agents
+      BadVLA
+      AttackVLA
+      TrustVLA
+    Large Vision-Language Models
+      TrojVLM
+      Shadowcast
+      VL-Trojan
+      BadToken
+    CLIP & SSL Encoders
+      BadEncoder
+      BadCLIP
+      CLIP-Inspector
+      Semantic Shield
+```
 
 <details open>
 <summary><h3 id="bd-gui">📱 GUI / Mobile / Computer-Use Agent Backdoors</h3></summary>
@@ -995,6 +1392,45 @@
 
 <details open>
 <summary><h2 id="benchmarks">📊 Benchmarks & Datasets</h2></summary>
+
+**🧠 Mind map** · representative works by sub-direction (full list in the tables below)
+
+```mermaid
+mindmap
+  root((Benchmarks & Datasets))
+    Web
+      MiniWoB++ · WebShop
+      Mind2Web · Mind2Web 2
+      WebArena · VisualWebArena
+      WebVoyager · Online-Mind2Web
+      WebArena-Pro · TimeWarp
+      ShopGym · Persona2Web
+    Mobile
+      AITW · AndroidControl
+      AndroidWorld · AndroidLab
+      SPA-Bench · A3
+      GUI Odyssey · AMEX
+      iOSWorld · AndroidDaily
+      MemGUI-Bench · GUI-CEval
+    Desktop & OS
+      OSWorld · OSWorld 2.0
+      WindowsAgentArena · WindowsWorld
+      macOSWorld · MacAgentBench
+      TheAgentCompany · SaaS-Bench
+      Spider2-V · ScienceBoard
+      OSWorld-Science · CADWorld
+    Cross-platform
+      VisualAgentBench · CRAB
+      AgentStudio · GUI-World
+      OS-Omni · GUITAR
+      ComponentBench · CUA-Recovery
+    Grounding & Understanding
+      ScreenSpot-Pro · UI-Vision
+      MMBench-GUI · AutoGUI-v2
+      ScreenHaystack · IGG
+      GUI-Primitives · WinDeskGround
+      Screen2Words · Widget Captioning
+```
 
 <h4 id="bench-web">- Web</h4>
 
